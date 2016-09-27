@@ -1,1 +1,3 @@
 Hello, this is the repository of Amiel Cuasay
+
+Completed my first commit and push
