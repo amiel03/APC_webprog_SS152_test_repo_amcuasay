@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+	/*background-image: url("images/bg2.jpg");*/
+}
+
+#wrapper{
+	width: 960px;
+	overflow: auto;
+	margin: 0 auto;
+
+}
+/*
+
+#header{
+	width: auto;
+	overflow: auto;
+}
+
+#header_top{
+	width: auto;
+	overflow: auto;
+}
+#logo{
+	width: 460px;
+	overflow: auto;
+	float: left;
+	margin: 10px;
+}
+#logo h1{
+	margin:0;
+	padding:0;
+	font-size: 36px;
+	font-family: OlivesLight;
+}
+#search{
+	width: 460px;
+	overflow: auto;
+	float: left;
+	margin: 30px 10px 10px 10px;
+}
+
+#search form{
+	float: right;
+}
+#header_center{
+	width: auto;
+	overflow: auto;
+}
+
+#menu_wrapper{
+	width: auto;
+	overflow: auto;
+	border-radius: 5px;
+}
+#menu{
+	margin: 0;
+	padding: 0;
+}
+#menu li{
+	list-style: none;
+	float: left;
+}
+#menu li a{
+	padding:10px;
+	display: block;
+	text-decoration: none;
+	color:#fff;
+}
+/*#header_bottom{
+	width: auto;
+	overflow: auto;
+}
+/*---/Content/---*/
+/*#content{
+	width: auto;
+	overflow: auto;
+}
+/*---/Footer/---*/
+/*#footer{
+	width: auto;
+	overflow: auto;
+	background: #000;
+}
+
+
+
+https://www.youtube.com/watch?v=KQQ8GENRUdA
