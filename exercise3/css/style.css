@@ -96,7 +96,6 @@ header nav ul li a:hover{
 	margin-top: 100px;
 }
 
-
 #slider ol{
 	list-style: none; 
 	position: absolute; 
@@ -124,9 +123,12 @@ header nav ul li a:hover{
 
 #slider .text h3{
 	font-size: 52px;
-
 }
 
+#slider .text p{
+	font-family: sans-serif;
+	font-size: 15px;
+}
 
 #slider .prev{
 	background-color: rgba(0,0,0,.3);
