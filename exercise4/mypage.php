@@ -20,7 +20,7 @@
 
 				<nav>
 					<ul>
-						<li><a href="mypage.html" class="activehome">Home</a></li>
+						<li><a href="mypage.php" class="activehome">Home</a></li>
 						<li><a href="interest.html">Interests</a></li>
 						<li><a href="contact.html">Contact</a></li>
 						<li><a href="trivia.html">Trivia</a></li>
@@ -40,7 +40,7 @@
 			</ol>
 
 			<div class="text">
-				<h3> Hi there! I'm Amiel Cuasay.</h3>
+				<h4> Hi there! I'm Amiel Cuasay.</h4>
 				<p> You can call me Amiel, Kristian or Cuasay/Cuaky.
 					
 				</p>
@@ -56,37 +56,137 @@
 		</div>
 
 		<!---/ section /---->
-		<section>
+		<div class="sectionform">		
+			<div class="sectioncontainer">
 
-		<div class="container">
-			<div>
-				<div class="icon">
-				<a href="https://twitter.com/Cuakyyyy" target="_blank">
-				<img src="images/twitter.png" width="100" height="100" alt="twit"></a>
-			</div>
+			<?php
+			 /*require 'mypage.html';
+			 require 'interest.html';
+			 require 'contact.html';
+			 require 'trivia.html';*/
+			// define variables and set to empty values
+			$nameErr = $emailErr = $genderErr = $websiteErr = $nickErr = "";
+			$name = $email = $gender = $comment = $website = $nickname = "";
 
-			<div class="description">
-				<h3>Twitter</h3>
-				<p>
-					To know more about what's happening about me<br>
-					check and follow out my twitter account!
-				</p>
-			</div>
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			  if (empty($_POST["name"])) {
+			    $nameErr = "Name is required";
+			  } else {
+			    $name = test_input($_POST["name"]);
+			    // check if name only contains letters and whitespace
+			    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+			      $nameErr = "Only letters and white space allowed";
+			    }
+			  }
+
+			   if (empty($_POST["nickname"])) {
+			    $nickname = "";
+			  } else {
+			    $nickname = test_input($_POST["nickname"]);
+			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+			    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+			      $nickErr = "Only letters and white space allowed";
+			    }
+			  }
+			  
+			  if (empty($_POST["email"])) {
+			    $emailErr = "Email is required";
+			  } else {
+			    $email = test_input($_POST["email"]);
+			    // check if e-mail address is well-formed
+			    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			      $emailErr = "Invalid email format";
+			    }
+			  }
+			    
+			  if (empty($_POST["website"])) {
+			    $website = "";
+			  } else {
+			    $website = test_input($_POST["website"]);
+			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
+			    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+			      $websiteErr = "Invalid URL";
+			    }
+			  }
+
+			  if (empty($_POST["comment"])) {
+			    $comment = "";
+			  } else {
+			    $comment = test_input($_POST["comment"]);
+			  }
+
+			  if (empty($_POST["gender"])) {
+			    $genderErr = "Gender is required";
+			  } else {
+			    $gender = test_input($_POST["gender"]);
+			  }
+			}
+
+			function test_input($data) {
+			  $data = trim($data);
+			  $data = stripslashes($data);
+			  $data = htmlspecialchars($data);
+			  return $data;
+			}
+			?>
+
+			<h2>PHP Form Validation Example</h2>
+			<p><span class="error">* required field.</span></p>
+			<form class="formstyle" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			<ul>
 			
-			<div class="icon2">
-				<a href="https://www.youtube.com/channel/UC3owud2utgrWi3tOnqFnedg" target="_blank">
-				<img src="images/youtube.png" width="100" height="100" alt="YT"></a>
-			</div>
+			 <input type="text" class="name-style align-left" name="name" placeholder="Name *" value="<?php echo $name;?>">
+			  <span class="error"> <?php echo $nameErr;?></span> &nbsp;&nbsp;&nbsp;
+			  
+			  <input type="text" class="nickname-style align-right" name="nickname" placeholder="Nickname" value="<?php echo $nickname;?>">
+			  <span class="error"> <?php echo $nickErr;?></span> 
+			 
+			 <br><br>
+			 
+			 <input type="text" class="email-style align-left" name="email" placeholder="E-mail *" value="<?php echo $email;?>">
+  				<span class="error"> <?php echo $emailErr;?></span> &nbsp;&nbsp;&nbsp;
 
-			<div class="description">
-				<h3>Youtube</h3>
-				<p>
-						Watch and like my awesome videos and <br>
-						don't forget to subcribe on my channel!
-				</p>
-				</div>
+  			<input type="text" class="website-style align-right" name="website" placeholder="Website" value="<?php echo $website;?>">
+			  <span class="error"><?php echo $websiteErr;?></span>
+			  <br><br>
+			 
+			  
+			  <textarea name="comment" class="comment-style align-left" placeholder="Comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+			  <br><br>
+			  
+			  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female&nbsp;&nbsp;
+			  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male &nbsp; *
+			  <span class="error" <?php echo $genderErr;?></span>
+			  <br><br>
+			  <input type="submit" name="submit" value="S u b m i t">  
+			</ul>
+			</form>
+
+
+			<?php
+			echo "<h3>Your Input:</h3>";
+			echo "<br>";
+			echo "Name : $name";
+			echo "<br>";
+			echo "<br>";
+			echo "Nickname : $nickname" ;
+			echo "<br>";
+			echo "<br>";
+			echo "E-mail : $email";
+			echo "<br>";
+			echo "<br>";
+			echo "Website : $website"; 
+			echo "<br>";
+			echo "<br>";
+			echo "Comment/s : $comment"; 
+			echo "<br>";
+			echo "<br>";
+			echo "Gender : $gender"; 
+			?>
+	
+		
+			</div>
 		</div>
-		</section>
 
 		<!----/ footer /---->
 		<footer>
