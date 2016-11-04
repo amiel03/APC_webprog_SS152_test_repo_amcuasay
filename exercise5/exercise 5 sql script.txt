@@ -1,0 +1,9 @@
+CREATE DATABASE `dbtuts` ;
+CREATE TABLE `dbtuts`.`users` (
+user_id INT( 10 ) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+first_name varchar( 25 ) not null ,
+nickname varchar( 25 ) not null,
+email varchar( 45 ) not null,
+website varchar( 45 ) not null,
+comments varchar( 255 ) not null,
+) ENGINE = InnoDB;
