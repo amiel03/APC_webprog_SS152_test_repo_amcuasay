@@ -1,9 +1,39 @@
+<?php
+include_once 'dbconnect.php';
+
+// delete condition
+if(isset($_GET['delete_id']))
+{
+	$sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+	mysqli_query($con,$sql_query);
+	header("Location: $_SERVER[PHP_SELF]");
+}
+// delete condition
+?>
+
 <html>
 <head>
 	<title> Welcome to My Page </title>
 
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<script type="text/javascript">
+		function edt_id(id)
+		{
+			if(confirm('Sure to edit ?'))
+			{
+				window.location.href='edit_data.php?edit_id='+id;
+			}
+		}
+		function delete_id(id)
+		{
+			if(confirm('Sure to Delete ?'))
+			{
+				window.location.href='index.php?delete_id='+id;
+			}
+		}
+	</script>
 
 </head>
 
@@ -60,10 +90,7 @@
 			<div class="sectioncontainer">
 
 			<?php
-			 /*require 'mypage.html';
-			 require 'interest.html';
-			 require 'contact.html';
-			 require 'trivia.html';*/
+			 
 			// define variables and set to empty values
 			$nameErr = $emailErr = $genderErr = $websiteErr = $nickErr = "";
 			$name = $email = $gender = $comment = $website = $nickname = "";
@@ -115,11 +142,11 @@
 			    $comment = test_input($_POST["comment"]);
 			  }
 
-			  if (empty($_POST["gender"])) {
+			  /*if (empty($_POST["gender"])) {
 			    $genderErr = "Gender is required";
 			  } else {
 			    $gender = test_input($_POST["gender"]);
-			  }
+			  }*/
 			}
 
 			function test_input($data) {
@@ -129,6 +156,28 @@
 			  return $data;
 			}
 			?>
+
+				<?php
+				include_once 'dbconnect.php';
+				if(isset($_POST['btn-save']))
+				{
+					// variables for input data
+					$first_name = $_POST['first_name'];
+					$nickname = $_POST['nickname'];
+					$email = $_POST['email'];
+					$websites = $_POST['websites'];
+					$comments = $_POST['comments'];
+					// variables for input data
+
+					// sql query for inserting data into database
+
+					$sql_query = "INSERT INTO users(first_name,nickname,email,websites,comments) VALUES('$first_name','$nickname','$email','$websites','$comments')";
+					mysqli_query($con,$sql_query);
+
+					// sql query for inserting data into database
+
+				}
+				?>
 
 			<h2>PHP Form Validation Example</h2>
 			<p><span class="error">* required field.</span></p>
@@ -154,35 +203,46 @@
 			  <textarea name="comment" class="comment-style align-left" placeholder="Comment" rows="5" cols="40"><?php echo $comment;?></textarea>
 			  <br><br>
 			  
-			  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female&nbsp;&nbsp;
-			  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male &nbsp; *
-			  <span class="error" <?php echo $genderErr;?></span>
-			  <br><br>
+
 			  <input type="submit" name="submit" value="S u b m i t">  
 			</ul>
 			</form>
 
+			<br>
+				<br>
+				<br>
+				<table align="center">
+					<tr>
+						<th id="th" colspan="5">YOUR DATA.</th>
 
-			<?php
-			echo "<h3>Your Input:</h3>";
-			echo "<br>";
-			echo "Name : $name";
-			echo "<br>";
-			echo "<br>";
-			echo "Nickname : $nickname" ;
-			echo "<br>";
-			echo "<br>";
-			echo "E-mail : $email";
-			echo "<br>";
-			echo "<br>";
-			echo "Website : $website"; 
-			echo "<br>";
-			echo "<br>";
-			echo "Comment/s : $comment"; 
-			echo "<br>";
-			echo "<br>";
-			echo "Gender : $gender"; 
-			?>
+					</tr>
+
+					<th id="th">Name</th>
+					<th id="th">Nickname</th>
+					<th id="th">email</th>
+					<th id="th">website</th>
+					<th id="th">comment</th>
+					<th id="th" colspan="2">Operations</th>
+					</tr>
+					<?php
+					$sql_query="SELECT * FROM users";
+					$result_set=mysqli_query($con,$sql_query);
+					while($row=mysqli_fetch_row($result_set))
+					{
+						?>
+						<tr>
+							<td><?php echo $row[1]; ?></td>
+							<td><?php echo $row[2]; ?></td>
+							<td><?php echo $row[3]; ?></td>
+							<td><?php echo $row[4]; ?></td>
+							<td><?php echo $row[5]; ?></td>
+							<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
+							<td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
+						</tr>
+						<?php
+					}
+					?>
+				</table>
 	
 		
 			</div>
@@ -201,62 +261,3 @@
 
 </html>
 
-<!--<body style = "background-image: url(images/bg2.jpg); background-repeat:no-repeat; background-size:100%; background-attachment:fixed;">
-	
-	<center><h1 style="font-family:New york;"> I'm </h1></center>
-	
-	<center><h1 style="font-family:New york; font-size:72px;"> Amiel Cuasay </h1></center>
-	<br><br>
-	<img src="images/AmielAdorable.jpg" border="2"  alt="Smiley face" style="float:right;width:200px;height:200px;margin-right:560px;">
-
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<h1 style="font-family:New york; font-size:48px; margin-left:560px; "> Amiel loves to : </h1>
-	
-    <h1 style="font-family:New york; font-size:28px; margin-left:560px; "> Play guitar </h1>
-	<h1 style="font-family:New york; font-size:28px; margin-left:560px; "> Watch movies </h1>
-	<h1 style="font-family:New york; font-size:28px; margin-left:560px; "> Sleep </h1>
-	<h1 style="font-family:New york; font-size:28px; margin-left:560px; "> Listen to music </h1>
-	
-	<hr width="50%">
-	
-	<a href="https://twitter.com/" target="_blank">
-	<center><img src="images/twitter.png" width="50" height="50" alt="twitta"></a></center>
-	<a href="https://www.youtube.com/" target="_blank">
-	<center><img src="images/youtube.png" width="50" height="50" alt="yotube"></a></center>
-	
-</body>-->
-
-
-<!--<div id="wrapper">
-		<div id="header">
-			<div id="header-top">
-				<div id="logo">
-					<h1> Welcome!</h1>
-				</div>
-				<div id="search">
-					<form>
-						<input type="text" name="search" placeholder="Search...">
-						<input type="submit" value="Go">
-					</form>
-				</div>
-			</div>
-			<div id="header-center">
-				<div id="menu_wrapper">
-					<ul id="menu">
-						<li><a href="#"> Home </a></li>
-						<li><a href="#"> Interests </a></li>
-						<li><a href="#"> Contact me </a></li>
-						<li><a href="#"> etc </a></li>
-					</ul>
-				</div>
-			</div>
-			<div id="header-bottom"></div>
-		</div>
-		<div id="content">
-			<div id="content-top"></div>
-			<div id="content-center"></div>
-		</div>
-		<div id="footer">
-		</div>
-
-	</div>-->

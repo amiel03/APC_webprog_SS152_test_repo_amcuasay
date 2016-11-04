@@ -3,6 +3,10 @@
 	padding: 0;
 	/*background-image: url("images/bg2.jpg");*/
 }
+
+#th{
+	color:white;
+}
 .active{
 	background-color: #FFF;
 }
@@ -317,7 +321,7 @@ footer{
 footer .copyright{
 	float: left;
 	margin-top: 42px;
-	margin-left: 555px;
+	margin-left: 650px;
 	font-size: 14px;
 	color: #000000;
 }
