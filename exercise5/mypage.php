@@ -19,18 +19,18 @@ if(isset($_GET['delete_id']))
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<script type="text/javascript">
-		function edt_id(id)
+		function edit_id(id)
 		{
 			if(confirm('Sure to edit ?'))
 			{
-				window.location.href='edit_data.php?edit_id='+id;
+				window.location.href='edit.php?edit_id='+id;
 			}
 		}
 		function delete_id(id)
 		{
 			if(confirm('Sure to Delete ?'))
 			{
-				window.location.href='index.php?delete_id='+id;
+				window.location.href='mypage.php?delete_id='+id;
 			}
 		}
 	</script>
@@ -184,7 +184,7 @@ if(isset($_GET['delete_id']))
 			<br>
 				<br>
 				<br>
-				<table align="center">
+				<table class="table">
 					<tr>
 						<th id="th" colspan="5"><a href="add.php">ADD DATA.</a></th>
 
@@ -209,7 +209,7 @@ if(isset($_GET['delete_id']))
 							<td><?php echo $row[3]; ?></td>
 							<td><?php echo $row[4]; ?></td>
 							<td><?php echo $row[5]; ?></td>
-							<td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
+							<td align="center"><a href="javascript:edit_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
 							<td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
 						</tr>
 						<?php

@@ -43,18 +43,18 @@ if(isset($_GET['delete_id']))
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <script type="text/javascript">
-        function edt_id(id)
+        function edit_id(id)
         {
             if(confirm('Sure to edit ?'))
             {
-                window.location.href='edit_data.php?edit_id='+id;
+                window.location.href='edit.php?edit_id='+id;
             }
         }
         function delete_id(id)
         {
             if(confirm('Sure to Delete ?'))
             {
-                window.location.href='index.php?delete_id='+id;
+                window.location.href='mypage.php?delete_id='+id;
             }
         }
     </script>

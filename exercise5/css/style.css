@@ -201,7 +201,7 @@ section .container div{
 
 .sectionform .sectioncontainer{
 	margin-top: 50px;
-	margin-left: 560px;
+	margin-left: 260px;
 	float: left;
 }
 
@@ -385,7 +385,10 @@ table td button:active
 	position:relative;
 	top:1px;
 }
-
+#th{
+	margin-right:auto;
+	margin-left:auto;
+}
 
 /* reference 
 https://www.youtube.com/watch?v=KQQ8GENRUdA
