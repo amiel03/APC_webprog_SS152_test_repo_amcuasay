@@ -92,17 +92,17 @@ if(isset($_GET['delete_id']))
 			<?php
 			 
 			// define variables and set to empty values
-			$nameErr = $emailErr = $genderErr = $websiteErr = $nickErr = "";
-			$name = $email = $gender = $comment = $website = $nickname = "";
+			$first_nameErr = $emailErr = $websitesErr = $nicknameErr = "";
+			$first_name = $email = $comments = $websites = $nickname = "";
 
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			  if (empty($_POST["name"])) {
-			    $nameErr = "Name is required";
+			  if (empty($_POST["first_name"])) {
+			    $first_nameErr = "Name is required";
 			  } else {
-			    $name = test_input($_POST["name"]);
+			    $first_name= test_input($_POST["first_name"]);
 			    // check if name only contains letters and whitespace
-			    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-			      $nameErr = "Only letters and white space allowed";
+			    if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
+			      $first_nameErr= "Only letters and white space allowed";
 			    }
 			  }
 
@@ -111,8 +111,8 @@ if(isset($_GET['delete_id']))
 			  } else {
 			    $nickname = test_input($_POST["nickname"]);
 			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-			    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-			      $nickErr = "Only letters and white space allowed";
+			    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
+			      $nicknameErr = "Only letters and white space allowed";
 			    }
 			  }
 			  
@@ -126,20 +126,20 @@ if(isset($_GET['delete_id']))
 			    }
 			  }
 			    
-			  if (empty($_POST["website"])) {
-			    $website = "";
+			  if (empty($_POST["websites"])) {
+			    $websites = "";
 			  } else {
-			    $website = test_input($_POST["website"]);
+			    $websites = test_input($_POST["websites"]);
 			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-			    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-			      $websiteErr = "Invalid URL";
+			    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$websites)) {
+			      $websitesErr = "Invalid URL";
 			    }
 			  }
 
-			  if (empty($_POST["comment"])) {
-			    $comment = "";
+			  if (empty($_POST["comments"])) {
+			    $comments = "";
 			  } else {
-			    $comment = test_input($_POST["comment"]);
+			    $comments = test_input($_POST["comments"]);
 			  }
 
 			  /*if (empty($_POST["gender"])) {

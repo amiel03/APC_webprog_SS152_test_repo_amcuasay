@@ -104,8 +104,8 @@ if(isset($_POST['btn-cancel']))
     </div>
 
     <!---/ section /---->
-    <div class="sectionform">
-        <div class="sectioncontainer">
+    <div class="sectionform edit">
+        <div class="sectioncontainer edit">
 
             <form method="post">
                 <table align="center">
