@@ -89,73 +89,7 @@ if(isset($_GET['delete_id']))
 		<div class="sectionform">		
 			<div class="sectioncontainer">
 
-			<?php
-			 
-			// define variables and set to empty values
-			$first_nameErr = $emailErr = $websitesErr = $nicknameErr = "";
-			$first_name = $email = $comments = $websites = $nickname = "";
 
-			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			  if (empty($_POST["first_name"])) {
-			    $first_nameErr = "Name is required";
-			  } else {
-			    $first_name= test_input($_POST["first_name"]);
-			    // check if name only contains letters and whitespace
-			    if (!preg_match("/^[a-zA-Z ]*$/",$first_name)) {
-			      $first_nameErr= "Only letters and white space allowed";
-			    }
-			  }
-
-			   if (empty($_POST["nickname"])) {
-			    $nickname = "";
-			  } else {
-			    $nickname = test_input($_POST["nickname"]);
-			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-			    if (!preg_match("/^[a-zA-Z ]*$/",$nickname)) {
-			      $nicknameErr = "Only letters and white space allowed";
-			    }
-			  }
-			  
-			  if (empty($_POST["email"])) {
-			    $emailErr = "Email is required";
-			  } else {
-			    $email = test_input($_POST["email"]);
-			    // check if e-mail address is well-formed
-			    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			      $emailErr = "Invalid email format";
-			    }
-			  }
-			    
-			  if (empty($_POST["websites"])) {
-			    $websites = "";
-			  } else {
-			    $websites = test_input($_POST["websites"]);
-			    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-			    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$websites)) {
-			      $websitesErr = "Invalid URL";
-			    }
-			  }
-
-			  if (empty($_POST["comments"])) {
-			    $comments = "";
-			  } else {
-			    $comments = test_input($_POST["comments"]);
-			  }
-
-			  /*if (empty($_POST["gender"])) {
-			    $genderErr = "Gender is required";
-			  } else {
-			    $gender = test_input($_POST["gender"]);
-			  }*/
-			}
-
-			function test_input($data) {
-			  $data = trim($data);
-			  $data = stripslashes($data);
-			  $data = htmlspecialchars($data);
-			  return $data;
-			}
-			?>
 
 				<?php
 				include_once 'dbconnect.php';

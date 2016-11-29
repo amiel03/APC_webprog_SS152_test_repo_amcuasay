@@ -205,7 +205,7 @@ section .container div{
 	float: left;
 }
 
-.edit{
+.edit,.add{
 
 	padding-left:150px;
 }
