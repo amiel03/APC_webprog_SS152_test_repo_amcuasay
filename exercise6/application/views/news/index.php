@@ -4,7 +4,7 @@
     <tr>
         <td><strong>Title</strong></td>
         <td><strong>Content</strong></td>
-        <td><strong>Operations</strong></td>
+        <td><strong>Action</strong></td>
     </tr>
     <?php foreach ($news as $news_item): ?>
         <tr>
