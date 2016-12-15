@@ -4,7 +4,7 @@ class Home extends CI_CONTROLLER{
 	public function index()
 	{
 		$data['title'] = 'WELCOME TO MYPAGE';
-		$this->load->view('template/navigation');
+		$this->load->view('templates/navigation');
 		$this->load->view('templates/header', $data);
 		$this->load->view('pages/homepage');
 		$this->load->view('templates/footer');
