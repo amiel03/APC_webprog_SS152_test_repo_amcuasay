@@ -57,9 +57,9 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1 style="font-family:HandTypist">Hi I'm Amiel Cuasay</h1>
-            <h3 style="font-size:20px">You can call me Amiel, Kristian or Cuasay ...</h3>
+            <h3 style="font-size:18px">You can call me Amiel, Kristian or Cuasay ...</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
+            <a href="#about" class="btn btn-dark btn-lg">But wait ... there's more!</a>
         </div>
     </header>
 
