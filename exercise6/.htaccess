@@ -1,2 +1,2 @@
-RewriteEngine On
+RewriteEngine on
 RewriteCond $1 !^(index\.php|images|css|fonts|js|robots\.txt)
