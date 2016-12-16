@@ -37,7 +37,7 @@
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <a id="menu-close" href="#" class="btn btn-light btn-lg hvr-grow pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
                 <a href="#top" onclick=$("#menu-close").click();>Amiel's Page</a>
             </li>
@@ -60,7 +60,7 @@
             <h1 style="font-family:HandTypist">Hi I'm Amiel Cuasay</h1>
             <h3 style="font-size:18px">You can call me Amiel, Kristian or Cuasay ...</h3>
             <br>
-            <a href="#about" class="hvr-grow">But wait ... there's more!</a>
+            <a href="#about" class="btn btn-dark btn-lg hvr-grow">But wait ... there's more!</a>
         </div>
     </header>
 
