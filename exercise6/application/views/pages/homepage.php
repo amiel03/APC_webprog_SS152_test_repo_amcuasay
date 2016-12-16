@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +60,7 @@
             <h1 style="font-family:HandTypist">Hi I'm Amiel Cuasay</h1>
             <h3 style="font-size:18px">You can call me Amiel, Kristian or Cuasay ...</h3>
             <br>
-            <a href="#about" class="btn btn-dark btn-lg">But wait ... there's more!</a>
+            <a href="#about" class="hvr-grow">But wait ... there's more!</a>
         </div>
     </header>
 
