@@ -40,15 +40,15 @@
             <li class="sidebar-brand">
                 <a href="#top" onclick=$("#menu-close").click();>Amiel's Page</a>
             </li>
-            <li>
+            <li class="sidebar-home">
                 <a href="#top" onclick=$("#menu-close").click();>Home</a>
             </li>
-            <li>
+            <li class="sidebar-about">
                 <a href="#about" onclick=$("#menu-close").click();>About</a>
             </li>
            
-            <li>
-                <a href="#contact" onclick=$("#menu-close").click();>Contact</a>
+            <li class="sidebar-contact">
+                <a href="#list-unstyled" onclick=$("#menu-close").click();>Contact</a>
             </li>
         </ul>
     </nav>
@@ -67,10 +67,10 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center" style="font-style:italic">
+                <div class="col-lg-12 text-center" style="font-style:italic;font-family:HandTypist;">
                     <h2>" Hope is being able to see that there </h2>
                     <h3> is light despite all of the darkness "</h3>
-                    <h4 style="margin-left:500px"> - Desmond Tutu </h4>
+                    <h3 style="margin-left:500px"> - Desmond Tutu </h3>
                 </div>
             </div>
             <!-- /.row -->
