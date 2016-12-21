@@ -105,11 +105,7 @@
         </tr>
     <?php endforeach; ?>
 </table>
-                </div>
-                <!-- /.col-lg-10 -->
-            </div>
-            <!-- /.row -->
-        </div>
+              
         <!-- /.container -->
     </section>
 
