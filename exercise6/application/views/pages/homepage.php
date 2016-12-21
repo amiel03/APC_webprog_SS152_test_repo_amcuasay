@@ -85,7 +85,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2><?php echo $title; ?></h2>
+                    
 
 	<table border='1' cellpadding='4'>
 	    <tr>
@@ -93,14 +93,14 @@
 	        <td><strong>Content</strong></td>
 	        <td><strong>Action</strong></td>
 	    </tr>
-    <?php foreach ($page as $news_item): ?>
+    <?php foreach ($page as $item): ?>
         <tr>
-            <td><?php echo $news_item['title']; ?></td>
-            <td><?php echo $news_item['text']; ?></td>
+            <td><?php echo $item['title']; ?></td>
+            <td><?php echo $item['text']; ?></td>
             <td>
-                <a href="<?php echo site_url('pages/'.$news_item['slug']); ?>">View</a> |
-                <a href="<?php echo site_url('pages/edit/'.$news_item['id']); ?>">Edit</a> |
-                <a href="<?php echo site_url('pages/delete/'.$news_item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
+                <a href="<?php echo site_url('pages/'.$item['slug']); ?>">View</a> |
+                <a href="<?php echo site_url('pages/edit/'.$item['id']); ?>">Edit</a> |
+                <a href="<?php echo site_url('pages/delete/'.$item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
             </td>
         </tr>
     <?php endforeach; ?>

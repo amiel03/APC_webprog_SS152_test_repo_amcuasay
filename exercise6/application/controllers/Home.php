@@ -22,9 +22,9 @@ class Home extends CI_CONTROLLER{
 
     public function view($slug = NULL)
     {
-        $data['news_item'] = $this->news_model->get_news($slug);
+        $data['item'] = $this->news_model->get_news($slug);
 
-        if (empty($data['news_item']))
+        if (empty($data['item']))
         {
             show_404();
         }
