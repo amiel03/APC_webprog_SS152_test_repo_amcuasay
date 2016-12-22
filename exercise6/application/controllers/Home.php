@@ -1,14 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_CONTROLLER{
-	function index( $page = 'homepage')
+	function index( $pages = 'homepage')
 	{
-		if ( ! file_exists('application/views/pages/'.$page.'.php')){
+		if ( ! file_exists('application/views/pages/'.$pages.'.php')){
 
 			show_404();
 		}
 
-		$this->load->view('pages/homepage');	
+		$this->load->view('pages/homepage');
+        $this->load->view('pages/create');
+        $this->load->view('pages/edit');
 	}
 
 	public function __construct()
@@ -28,8 +30,9 @@ class Home extends CI_CONTROLLER{
         {
             show_404();
         }
-     
-        $this->load->view('pages/homepage/view', $data);
+
+        $this->load->view('pages/homepage', $data);
+        $this->load->view('pages/view', $data);
 
     }
 
@@ -45,7 +48,7 @@ class Home extends CI_CONTROLLER{
 
         if ($this->form_validation->run() === FALSE)
         {
-            
+            $this->load->view('pages/homepage', $data);
             $this->load->view('pages/create');
             
 
@@ -72,14 +75,14 @@ class Home extends CI_CONTROLLER{
         $this->load->library('form_validation');
 
 
-        $data['news_item'] = $this->news_model->get_news_by_id($id);
+        $data['item'] = $this->news_model->get_news_by_id($id);
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('text', 'Text', 'required');
 
         if ($this->form_validation->run() === FALSE)
         {
-
+            $this->load->view('pages/homepage', $data);
             $this->load->view('pages/edit', $data);
 
 
@@ -88,7 +91,7 @@ class Home extends CI_CONTROLLER{
         {
             $this->news_model->set_news($id);
             //$this->load->view('news/success');
-            redirect( base_url() . 'index.php/pages');
+            redirect( base_url() . 'pages/homepage.php');
         }
     }
 
@@ -104,6 +107,6 @@ class Home extends CI_CONTROLLER{
         $news_item = $this->news_model->get_news_by_id($id);
 
         $this->news_model->delete_news($id);
-        redirect( base_url() . 'index.php/pages');
+        redirect( base_url() . 'pages/homepage.php');
     }
 }

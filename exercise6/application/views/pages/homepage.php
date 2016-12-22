@@ -93,7 +93,7 @@
 	        <td><strong>Content</strong></td>
 	        <td><strong>Action</strong></td>
 	    </tr>
-    <?php foreach ($page as $item): ?>
+    <?php foreach ($pages as $item): ?>
         <tr>
             <td><?php echo $item['title']; ?></td>
             <td><?php echo $item['text']; ?></td>
