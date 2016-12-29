@@ -18,9 +18,9 @@
                 <td><?php echo $user_item['gender']; ?></td>
                 <td><?php echo $user_item['comment']; ?></td>
                 <td>
-                    <a href="<?php echo site_url('users/'.$user_item['slug']); ?>">View</a> |
-                    <a href="<?php echo site_url('users/edit/'.$user_item['id']); ?>">Edit</a> |
-                    <a href="<?php echo site_url('users/delete/'.$user_item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
+                    <a href="<?php echo site_url('user/'.$user_item['slug']); ?>">View</a> |
+                    <a href="<?php echo site_url('user/edit/'.$user_item['id']); ?>">Edit</a> |
+                    <a href="<?php echo site_url('user/delete/'.$user_item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
