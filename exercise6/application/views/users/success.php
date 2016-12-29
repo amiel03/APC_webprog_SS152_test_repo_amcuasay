@@ -1,2 +1,2 @@
 
-<p>News added successfully!</p>
+<p>Data added successfully!</p>
