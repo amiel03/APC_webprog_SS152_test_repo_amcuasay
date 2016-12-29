@@ -10,11 +10,11 @@ class User_model extends CI_Model {
     {
         if ($slug === FALSE)
         {
-            $query = $this->db->get('user');
+            $query = $this->db->get('users');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('user', array('slug' => $slug));
+        $query = $this->db->get_where('users', array('slug' => $slug));
         return $query->row_array();
     }
 
@@ -22,11 +22,11 @@ class User_model extends CI_Model {
     {
         if ($id === 0)
         {
-            $query = $this->db->get('user');
+            $query = $this->db->get('users');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('user', array('id' => $id));
+        $query = $this->db->get_where('users', array('id' => $id));
         return $query->row_array();
     }
 
@@ -39,26 +39,23 @@ class User_model extends CI_Model {
         $data = array(
             'firstname' => $this->input->post('firstname'),
             'slug' => $slug,
-            'lastname' => $this->input->post('lastname'),
-            'midname' => $this->input->post('midname'),
             'nickname' => $this->input->post('nickname'),
             'email' => $this->input->post('email'),
-            'homeadd' => $this->input->post('homeadd'),
             'gender' => $this->input->post('gender'),
             'comment' => $this->input->post('comment')
         );
 
         if ($id == 0) {
-            return $this->db->insert('user', $data);
+            return $this->db->insert('users', $data);
         } else {
             $this->db->where('id', $id);
-            return $this->db->update('user', $data);
+            return $this->db->update('users', $data);
         }
     }
 
     public function delete_user($id)
     {
         $this->db->where('id', $id);
-        return $this->db->delete('user');
+        return $this->db->delete('users');
     }
 }
