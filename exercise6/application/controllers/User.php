@@ -100,8 +100,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         else
         {
             $this->user_model->set_user($id);
-            //$this->load->view('news/success');
-            redirect( base_url() . 'index.php/user');
+            redirect( base_url() . 'index.php/users');
         }
     }
 
