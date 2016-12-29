@@ -10,11 +10,11 @@ class User extends CI_Controller {
 
     public function index()
     {
-        $data['user'] = $this->user_model->get_user();
+        $data['users'] = $this->user_model->get_user();
         $data['firstname'] = 'User Table';
 
         $this->load->view('templates/header', $data);
-        $this->load->view('user/index', $data);
+        $this->load->view('users/index', $data);
         $this->load->view('templates/footer');
     }
 
@@ -30,7 +30,7 @@ class User extends CI_Controller {
         $data['firstname'] = $data['user_item']['firstname'];
 
         $this->load->view('templates/header', $data);
-        $this->load->view('user/view', $data);
+        $this->load->view('users/view', $data);
         $this->load->view('templates/footer');
     }
 
@@ -53,7 +53,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         if ($this->form_validation->run() === FALSE)
         {
             $this->load->view('templates/header', $data);
-            $this->load->view('user/create');
+            $this->load->view('users/create');
             $this->load->view('templates/footer');
 
         }
@@ -61,7 +61,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         {
             $this->user_model->set_user();
             $this->load->view('templates/header', $data);
-            $this->load->view('user/success');
+            $this->load->view('users/success');
             $this->load->view('templates/footer');
         }
     }
@@ -93,7 +93,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         if ($this->form_validation->run() === FALSE)
         {
             $this->load->view('templates/header', $data);
-            $this->load->view('user/edit', $data);
+            $this->load->view('users/edit', $data);
             $this->load->view('templates/footer');
 
         }
@@ -101,7 +101,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         {
             $this->user_model->set_user($id);
             //$this->load->view('news/success');
-            redirect( base_url() . 'index.php/user');
+            redirect( base_url() . 'index.php/users');
         }
     }
 
@@ -117,6 +117,6 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         $user_item = $this->user_model->get_user_by_id($id);
 
         $this->user_model->delete_user($id);
-        redirect( base_url() . 'index.php/user');
+        redirect( base_url() . 'index.php/users');
     }
 }
