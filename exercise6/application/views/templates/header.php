@@ -14,5 +14,5 @@
 
 <body>
 
-<h1>User Information</h1>
+<h1>Welcome to Amiel's Page</h1>
 <p><a href="<?php echo site_url('users'); ?>">Home</a> | <a href="<?php echo site_url('users/create'); ?>">add data</a></p>
