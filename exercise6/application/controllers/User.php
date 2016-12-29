@@ -10,7 +10,7 @@ class User extends CI_Controller {
 
     public function index()
     {
-        $data['users'] = $this->user_model->get_user();
+        $data['user'] = $this->user_model->get_user();
         $data['firstname'] = 'User Table';
 
         $this->load->view('templates/header', $data);
