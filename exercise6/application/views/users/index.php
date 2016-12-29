@@ -27,10 +27,7 @@
     </table>
 
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title></title>
+
 
         <style>
             body {margin:0;}
@@ -122,6 +119,7 @@
                 transform: translate(-50%, -50%);
             }
 
-            a
-            {
+            a {
                 text-decoration: none;
+            }
+            </style>
