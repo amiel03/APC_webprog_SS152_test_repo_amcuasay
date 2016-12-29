@@ -98,9 +98,9 @@
             <td><?php echo $item['title']; ?></td>
             <td><?php echo $item['text']; ?></td>
             <td>
-                <a href="<?php echo site_url('pages/'.$item['slug']); ?>">View</a> |
-                <a href="<?php echo site_url('pages/edit/'.$item['id']); ?>">Edit</a> |
-                <a href="<?php echo site_url('pages/delete/'.$item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
+                <a href="<?php echo site_url('users/'.$item['slug']); ?>">View</a> |
+                <a href="<?php echo site_url('users/edit/'.$item['id']); ?>">Edit</a> |
+                <a href="<?php echo site_url('users/delete/'.$item['id']); ?>" onClick="return confirm('Are you sure you want to delete?')">Delete</a>
             </td>
         </tr>
     <?php endforeach; ?>

@@ -3,14 +3,14 @@
 class Home extends CI_CONTROLLER{
 	function index( $pages = 'homepage')
 	{
-		if ( ! file_exists('application/views/pages/'.$pages.'.php')){
+		if ( ! file_exists('application/views/users/'.$pages.'.php')){
 
 			show_404();
 		}
 
-		$this->load->view('pages/homepage');
-        $this->load->view('pages/create');
-        $this->load->view('pages/edit');
+		$this->load->view('users/homepage');
+        $this->load->view('users/create');
+        $this->load->view('users/edit');
 	}
 
 	public function __construct()
@@ -31,8 +31,8 @@ class Home extends CI_CONTROLLER{
             show_404();
         }
 
-        $this->load->view('pages/homepage', $data);
-        $this->load->view('pages/view', $data);
+        $this->load->view('users/homepage', $data);
+        $this->load->view('users/view', $data);
 
     }
 
@@ -48,8 +48,8 @@ class Home extends CI_CONTROLLER{
 
         if ($this->form_validation->run() === FALSE)
         {
-            $this->load->view('pages/homepage', $data);
-            $this->load->view('pages/create');
+            $this->load->view('users/homepage', $data);
+            $this->load->view('users/create');
             
 
         }
@@ -57,7 +57,7 @@ class Home extends CI_CONTROLLER{
         {
             $this->news_model->set_news();
 
-            $this->load->view('pages/success');
+            $this->load->view('users/success');
 
         }
     }
@@ -82,8 +82,8 @@ class Home extends CI_CONTROLLER{
 
         if ($this->form_validation->run() === FALSE)
         {
-            $this->load->view('pages/homepage', $data);
-            $this->load->view('pages/edit', $data);
+            $this->load->view('users/homepage', $data);
+            $this->load->view('users/edit', $data);
 
 
         }
@@ -91,7 +91,7 @@ class Home extends CI_CONTROLLER{
         {
             $this->news_model->set_news($id);
             //$this->load->view('news/success');
-            redirect( base_url() . 'pages/homepage.php');
+            redirect( base_url() . 'users/homepage.php');
         }
     }
 
@@ -107,6 +107,6 @@ class Home extends CI_CONTROLLER{
         $news_item = $this->news_model->get_news_by_id($id);
 
         $this->news_model->delete_news($id);
-        redirect( base_url() . 'pages/homepage.php');
+        redirect( base_url() . 'users/homepage.php');
     }
 }
