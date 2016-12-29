@@ -57,5 +57,5 @@ $route['user/create'] = 'users/create';
 
 $route['user/edit'] = 'users/edit';
 
-$route['user/view'] = 'users/view/$1';
+$route['user/view'] = 'users/view';
 $route['user'] = 'users/view';
