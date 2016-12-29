@@ -3,7 +3,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('user/edit/'.$user_item['id']); ?>
+<?php echo form_open('users/edit/'.$user_item['id']); ?>
 <table>
     <tr>
         <td><label for="firstname">First Name</label></td>

@@ -5,7 +5,7 @@
 
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('user/create'); ?>
+<?php echo form_open('users/create'); ?>
 <table>
     <tr>
         <td><label for="firstname">First Name</label></td>
