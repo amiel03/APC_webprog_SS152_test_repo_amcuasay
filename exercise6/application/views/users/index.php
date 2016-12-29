@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/main.css"/>
 <h2><?php echo $firstname; ?></h2>
 
 <center>
