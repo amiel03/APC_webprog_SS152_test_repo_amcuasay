@@ -82,11 +82,8 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         $data['user_item'] = $this->user_model->get_user_by_id($id);
 
         $this->form_validation->set_rules('firstname', 'Firstname', 'required');
-        $this->form_validation->set_rules('lastname', 'Lastname', 'required');
-        $this->form_validation->set_rules('midname', 'Midname', 'required');
         $this->form_validation->set_rules('nickname', 'Nickname', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('homeadd', 'Homeadd', 'required');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('comment', 'Comment', 'required');
 
