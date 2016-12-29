@@ -97,7 +97,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         else
         {
             $this->user_model->set_user($id);
-            redirect( base_url() . 'index.php/users');
+            redirect( base_url() . 'index.php/user');
         }
     }
 
