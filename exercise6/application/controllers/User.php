@@ -10,7 +10,7 @@ class User extends CI_Controller {
 
     public function index()
     {
-        $data['user'] = $this->user_model->get_user();
+        $data['users'] = $this->user_model->get_user();
         $data['firstname'] = 'User Table';
 
         $this->load->view('templates/header', $data);
@@ -45,11 +45,8 @@ $this->form_validation->set_rules('title', 'Title', 'required');
 $this->form_validation->set_rules('text', 'Text', 'required');
             */
         $this->form_validation->set_rules('firstname', 'Firstname', 'required');
-        $this->form_validation->set_rules('lastname', 'Lastname', 'required');
-        $this->form_validation->set_rules('midname', 'Midname', 'required');
         $this->form_validation->set_rules('nickname', 'Nickname', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('homeadd', 'Homeadd', 'required');
         $this->form_validation->set_rules('gender', 'Gender', 'required');
         $this->form_validation->set_rules('comment', 'Comment', 'required');
 
