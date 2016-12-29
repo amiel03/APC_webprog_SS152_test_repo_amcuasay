@@ -14,8 +14,8 @@ class User_model extends CI_Model {
             return $query->result_array();
         }
 
-        /*$query = $this->db->get_where('users', array('slug' => $slug));
-        return $query->row_array();*/
+        $query = $this->db->get_where('users', array('slug' => $slug));
+        return $query->row_array();
     }
 
     public function get_user_by_id($id = 0)
@@ -38,6 +38,7 @@ class User_model extends CI_Model {
 
         $data = array(
             'firstname' => $this->input->post('firstname'),
+            'slug' => $slug,
             'nickname' => $this->input->post('nickname'),
             'email' => $this->input->post('email'),
             'gender' => $this->input->post('gender'),
