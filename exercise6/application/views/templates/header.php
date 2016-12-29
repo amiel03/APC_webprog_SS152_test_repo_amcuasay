@@ -2,7 +2,7 @@
 <head>
     <style>
         body {
-            background-image: url("../users/bg.jpg");
+            background-image: url("../../../bg.png");
             background-repeat: no-repeat;
         }
     </style>
