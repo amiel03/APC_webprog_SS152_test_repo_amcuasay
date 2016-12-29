@@ -101,7 +101,7 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         {
             $this->user_model->set_user($id);
             //$this->load->view('news/success');
-            redirect( base_url() . 'index.php/users');
+            redirect( base_url() . 'index.php/user');
         }
     }
 
@@ -117,6 +117,6 @@ $this->form_validation->set_rules('text', 'Text', 'required');
         $user_item = $this->user_model->get_user_by_id($id);
 
         $this->user_model->delete_user($id);
-        redirect( base_url() . 'index.php/users');
+        redirect( base_url() . 'index.php/user');
     }
 }
