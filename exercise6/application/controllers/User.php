@@ -11,7 +11,7 @@ class User extends CI_Controller {
     public function index()
     {
         $data['users'] = $this->user_model->get_user();
-        $data['firstname'] = 'Welcome to My Page';
+        $data['firstname'] = 'User Table';
 
         $this->load->view('templates/header', $data);
         $this->load->view('users/index', $data);
