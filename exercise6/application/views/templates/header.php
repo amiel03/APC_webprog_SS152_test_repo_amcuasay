@@ -15,4 +15,4 @@
 <body>
 
 <h1>Welcome to Amiel's Page</h1>
-<p><a href="<?php echo site_url('users'); ?>">Home</a> | <a href="<?php echo site_url('user/create'); ?>">add data</a></p>
+<p><a href="<?php echo site_url('user'); ?>">Home</a> | <a href="<?php echo site_url('user/create'); ?>">add data</a></p>
