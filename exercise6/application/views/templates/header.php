@@ -2,7 +2,7 @@
 <head>
     <style>
         body {
-            background-image: url("../cityci.png");
+            background-image: url("../bg.jpg");
             background-repeat: no-repeat;
         }
     </style>
