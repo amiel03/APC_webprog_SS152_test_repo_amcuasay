@@ -10,7 +10,7 @@
             <td><strong>Comment</strong></td>
             <td><strong>Action</strong></td>
         </tr>
-        <?php foreach ($user as $user_item): ?>
+        <?php foreach ($users as $user_item): ?>
             <tr>
                 <td><?php echo $user_item['firstname']; ?></td>
                 <td><?php echo $user_item['nickname']; ?></td>
