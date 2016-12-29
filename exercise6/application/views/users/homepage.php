@@ -4,11 +4,8 @@
     <table border='5' cellpadding='4'>
         <tr>
             <td><strong>First Name</strong></td>
-            <td><strong>Last Name</strong></td>
-            <td><strong>Middle Name</strong></td>
             <td><strong>Nickname</strong></td>
             <td><strong>Email Address</strong></td>
-            <td><strong>Home Address</strong></td>
             <td><strong>Gender</strong></td>
             <td><strong>Comment</strong></td>
             <td><strong>Action</strong></td>
@@ -16,11 +13,8 @@
         <?php foreach ($user as $user_item): ?>
             <tr>
                 <td><?php echo $user_item['firstname']; ?></td>
-                <td><?php echo $user_item['lastname']; ?></td>
-                <td><?php echo $user_item['midname']; ?></td>
                 <td><?php echo $user_item['nickname']; ?></td>
                 <td><?php echo $user_item['email']; ?></td>
-                <td><?php echo $user_item['homeadd']; ?></td>
                 <td><?php echo $user_item['gender']; ?></td>
                 <td><?php echo $user_item['comment']; ?></td>
                 <td>

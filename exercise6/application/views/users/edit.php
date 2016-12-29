@@ -10,24 +10,12 @@
         <td><input type="input" name="firstname" size="50" value="<?php echo $user_item['firstname'] ?>" /></td>
     </tr>
     <tr>
-        <td><label for="lastname">Last Name</label></td>
-        <td><input type="input" name="lastname" size="50" value="<?php echo $user_item['lastname'] ?>" /></td>
-    </tr>
-    <tr>
-        <td><label for="midname">Middle Name</label></td>
-        <td><input type="input" name="midname" size="50" value="<?php echo $user_item['midname'] ?>" /></td>
-    </tr>
-    <tr>
         <td><label for="nickname">Nickname</label></td>
         <td><input type="input" name="nickname" size="50" value="<?php echo $user_item['nickname'] ?>" /></td>
     </tr>
     <tr>
         <td><label for="email">Email Address</label></td>
         <td><input type="input" name="email" size="50" value="<?php echo $user_item['email'] ?>" /></td>
-    </tr>
-    <tr>
-        <td><label for="homeadd">Home Address</label></td>
-        <td><input type="input" name="homeadd" size="50" value="<?php echo $user_item['homeadd'] ?>" /></td>
     </tr>
     <tr>
         <td><label for="gender">Gender</label></td>
