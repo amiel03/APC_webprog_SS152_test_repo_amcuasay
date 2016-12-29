@@ -53,9 +53,9 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['users'] = 'users';
-$route['users/create'] = 'users/create';
+$route['user/create'] = 'users/create';
 
-$route['users/edit/(:any)'] = 'users/edit';
+$route['user/edit'] = 'users/edit';
 
-$route['users/view/(:any)'] = 'users/view';
-$route['users/(:any)'] = 'users/view';
+$route['user/view'] = 'users/view/$1';
+$route['user'] = 'users/view';
